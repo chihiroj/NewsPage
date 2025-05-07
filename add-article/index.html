@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css" />
-    <script src="script.js"></script>
+    <script src="addArticle.js"></script>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Potta+One&display=swap"
       rel="stylesheet">
     <title>Add article</title>
+    
   </head>
 
   <body>
@@ -42,7 +43,7 @@
       <p>Fill out the form below and click "submit" to publish your own column on Insight Daily.</p>
         
       
-      <form id="add-article-form" action="http://localhost:8080/api/v1/article" method="post">
+      <form id="add-article-form">
         <dl>
           <dt><label class="form-label" for="username">Name</label></dt>
           <dd><input class="form-control" id="username" type="text" name="name"></dd>
