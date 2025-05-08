@@ -1,0 +1,14 @@
+#add-article{
+  padding: 2rem;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 450px) {
+
+  #add-article-form{
+    min-width: 400px;
+  }
+
+} 

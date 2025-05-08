@@ -57,6 +57,11 @@ let createDeleteButton = (contentCol, article) => {
     deleteArticle(article.id);
   });
 }
+
+let shortenText = (text, maxLength) => {
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + '...';
+}
  
 let addReaderStoriesToWebsite = (articleList) => {
   const localNewsDiv = document.getElementById("local-news-wrapper");
@@ -91,14 +96,16 @@ let addReaderStoriesToWebsite = (articleList) => {
     titleElement.classList.add('card-title');
     const titleLink = document.createElement('a');
     titleLink.classList.add('blacklink');
-    titleLink.href = '#';
+    titleLink.href = `/article/index.html?id=${article.id}`;
     titleLink.textContent = article.title;
 
     titleElement.appendChild(titleLink);
 
     const descriptionElement = document.createElement('p');
     descriptionElement.classList.add('card-text');
-    descriptionElement.textContent = article.contents;
+
+    const shortendText = shortenText(article.contents,300);
+    descriptionElement.textContent = shortendText;
 
     cardBodyDiv.appendChild(titleElement);
     cardBodyDiv.appendChild(descriptionElement);
