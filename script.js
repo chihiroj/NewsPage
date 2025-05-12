@@ -1,5 +1,6 @@
 window.onload = (event) => {
 
+  //Get all article from backend.
   fetch(`http://localhost:8080/api/v1/article` , {
     method: 'GET'
   })
@@ -18,6 +19,7 @@ window.onload = (event) => {
   });
 }
 
+//Delete article from backend and frontend.
 let deleteArticle = (id) => {
   fetch(`http://localhost:8080/api/v1/article/${id}` , {
     method: 'DELETE'
@@ -33,6 +35,7 @@ let deleteArticle = (id) => {
   });
 }
 
+//Delete article from frontend.
 let deleteArticleFromHtml = (articleId) => {
   const articleDiv = document.getElementById(articleId);
   articleDiv.remove();
@@ -62,10 +65,23 @@ let shortenText = (text, maxLength) => {
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength) + '...';
 }
- 
+
+//Show all article from backend.
 let addReaderStoriesToWebsite = (articleList) => {
   const localNewsDiv = document.getElementById("local-news-wrapper");
 
+  //If articles are empty show a message.
+  if(articleList.length === 0){
+    const message = document.createElement('p');
+    message.innerText="There are no stories now. ";
+    localNewsDiv.appendChild(message);
+    const link = document.createElement("a");
+    link.innerText = "Add a new one here!";
+    link.href = "/add-article";
+    message.appendChild(link);
+  }
+
+  //Loop through all articles from backend and create HTML.
   articleList.forEach(article => {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add('row', 'card', 'mb-3', 'local-news-article');

@@ -19,3 +19,38 @@
   height: auto;
   max-width: 600px;
 }
+
+#social-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#button-wrapper {
+ width: 800px;
+ padding: 1rem;
+ display: flex;
+ gap: 10px;
+}
+
+.social-button{
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+}
+
+#comment-wrapper{
+  display: flex;
+  justify-content: center;
+
+}
+
+#comment-section{
+  width: 500px;
+}
+#comment-input{
+  width: 100%;
+}
+.comment{
+  font-size: 15px;
+  
+}

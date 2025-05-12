@@ -2,6 +2,7 @@ window.onload = (event) => {
   document.getElementById("add-article-form").addEventListener("submit", async function (event) {
     event.preventDefault();
 
+    //Save new article in backend.
     const form = event.target;
     const data = {
       name: form.name.value,
